@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Use main development branch of Rails
 gem "rails", github: "rails/rails", branch: "main"
 
@@ -66,4 +68,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-

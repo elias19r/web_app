@@ -27,8 +27,10 @@
 
 /public/assets
 
-# Ignore master key for decrypting credentials and more.
+# Ignore Rails credentials.
 /config/master.key
+/config/credentials.*
+/config/credentials/*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep

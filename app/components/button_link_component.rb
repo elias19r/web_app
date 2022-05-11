@@ -10,11 +10,9 @@ class ButtonLinkComponent < ApplicationComponent
     px-4
     rounded
   "
-  def initialize(href:, attrs: {})
+  def initialize(href:, **options)
     @href = href
-    @attrs = {
-      class: BUTTON_CLASS,
-    }.merge(attrs)
+    @options = { class: BUTTON_CLASS }.merge(options)
   end
 
   def render?

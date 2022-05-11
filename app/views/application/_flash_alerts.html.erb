@@ -5,23 +5,31 @@
       <% when Hash %>
         <%=
           alert_kwargs = {
-            type:        key,
-            subject:     value[:subject],
+            scheme: key,
+            subject: value[:subject],
             dismissible: value[:dismissible],
-            attrs:       value[:attrs]
+            **(value[:options] || {})
           }.compact
-
           alert_content = value[:content]
-          alert_button_link = value[:button_link] || {}
+
+          button_link = value[:button_link] || {}
+
+          alert_button_link_kwargs = {
+            href: button_link[:href],
+            **(button_link[:options] || {})
+          }.compact
+          alert_button_link_content = button_link[:content]
 
           render(AlertComponent.new(**alert_kwargs)) do |c|
-            c.button_link(href: alert_button_link[:href]) { alert_button_link[:content] }
+            c.button_link(**alert_button_link_kwargs) do
+              alert_button_link_content
+            end
 
             alert_content
           end
         %>
       <% else %>
-        <%= render(AlertComponent.new(type: key)) { value } %>
+        <%= render(AlertComponent.new(scheme: key)) { value } %>
       <% end %>
     <% end %>
   </div>

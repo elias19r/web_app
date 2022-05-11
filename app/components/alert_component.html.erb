@@ -1,4 +1,4 @@
-<%= tag.div(**@attrs) do %>
+<%= tag.div(**@options) do %>
   <% if @subject.present? %>
     <p class="font-bold"><%= @subject %></p>
   <% end %>
@@ -8,7 +8,7 @@
   <% end %>
 
   <% if @dismissible %>
-    <%= tag.button(**@button_dismiss_attrs) do %>
+    <%= tag.button(**@button_dismiss_options) do %>
       <span class="sr-only"><%= I18n.t("components.alert.close") %></span>
       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
         <path

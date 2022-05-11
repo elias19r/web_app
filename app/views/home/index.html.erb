@@ -6,4 +6,17 @@
       "I'm a button link"
     end
   %>
+
+  <%= form_with do |form| %>
+    <div class="grid grid-cols-1 gap-2">
+      <%= render(FormLabelComponent.new(form, :someting)) { "I'm a label" } %>
+      <%= render(FormTextFieldComponent.new(form, :someting)) %>
+
+      <%= render(FormLabelComponent.new(form, :email)) { "Email" } %>
+      <%= render(FormEmailFieldComponent.new(form, :email, placeholder: 'test@example.com')) %>
+
+      <%= render(FormLabelComponent.new(form, :date)) { "Date" } %>
+      <%= render(FormDateFieldComponent.new(form, :date)) %>
+    </div>
+  <% end %>
 </div>

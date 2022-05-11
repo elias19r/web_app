@@ -1,8 +1,23 @@
 # frozen_string_literal: true
 
-class ButtonLinkComponent < ViewComponent::Base
-  def initialize(text:, href:)
-    @text = text
+class ButtonLinkComponent < ApplicationComponent
+  BUTTON_CLASS = "
+    bg-blue-500
+    hover:bg-blue-700
+    text-white
+    font-bold
+    py-2
+    px-4
+    rounded
+  "
+  def initialize(href:, attrs: {})
     @href = href
+    @attrs = {
+      class: BUTTON_CLASS,
+    }.merge(attrs)
+  end
+
+  def render?
+    content?
   end
 end

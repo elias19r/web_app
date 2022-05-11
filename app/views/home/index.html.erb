@@ -2,11 +2,8 @@
   <h1 class="font-bold text-4xl">Home</h1>
 
   <%=
-    render(
-      ButtonLinkComponent.new(
-        text: "I'm a button link",
-        href: "https://example.com"
-      )
-    )
+    render(ButtonLinkComponent.new(href: "https://example.com")) do
+      "I'm a button link"
+    end
   %>
 </div>

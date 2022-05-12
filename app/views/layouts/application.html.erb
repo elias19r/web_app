@@ -20,7 +20,7 @@
       <%= yield :header %>
     </header>
 
-    <%= render(partial: 'flash_alerts') %>
+    <%= render(FlashComponent.new(flash)) %>
 
     <main class="container mx-auto mt-5 px-5 flex">
       <%= yield %>

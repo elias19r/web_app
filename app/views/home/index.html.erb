@@ -2,8 +2,38 @@
   <h1 class="font-bold text-4xl">Home</h1>
 
   <%=
-    render(ButtonLinkComponent.new(href: "https://example.com")) do
-      "I'm a button link"
+    render(ButtonLinkComponent.new(href: "#")) do
+      "I'm a primary button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'primary')) do
+      "I'm also a primary button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'secondary')) do
+      "I'm a secondary button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'info')) do
+      "I'm a info button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'danger')) do
+      "I'm a danger button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'warning')) do
+      "I'm a warning button link"
+    end
+  %>
+  <%=
+    render(ButtonLinkComponent.new(href: "#", scheme: 'success')) do
+      "I'm a success button link"
     end
   %>
 

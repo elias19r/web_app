@@ -1,0 +1,21 @@
+<div class="flex flex-col items-center">
+  <% @flash.each do |flash_item| %>
+    <%=
+      alert_kwargs = build_alert_kwargs(flash_item)
+      alert_content = get_alert_content(flash_item)
+
+      alert_button_link_kwargs = build_alert_button_link_kwargs(flash_item)
+      alert_button_link_content = get_alert_button_link_content(flash_item)
+
+      render(AlertComponent.new(**alert_kwargs)) do |c|
+        if alert_button_link_kwargs.present?
+          c.button_link(**alert_button_link_kwargs) do
+            alert_button_link_content
+          end
+        end
+
+        alert_content
+      end
+    %>
+  <% end %>
+</div>

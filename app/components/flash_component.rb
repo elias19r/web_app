@@ -33,7 +33,7 @@ class FlashComponent < ApplicationComponent
     _key, value = flash_item
 
     case value
-    when Hash then
+    when Hash
       value[:content]
     else
       value
@@ -64,8 +64,6 @@ class FlashComponent < ApplicationComponent
       button_link = value[:button_link] || {}
 
       button_link[:content]
-    else
-      nil
     end
   end
 end

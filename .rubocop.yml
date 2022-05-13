@@ -1,0 +1,43 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+Style/StringLiterals:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  Enabled: false
+Style/TrailingCommaInHashLiteral:
+  Enabled: false
+Style/MutableConstant:
+  Enabled: false
+Style/Lambda:
+  Enabled: false
+Style/GlobalStdStream:
+  Enabled: false
+Style/RedundantFetchBlock:
+  Enabled: false
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/LineLength:
+  Max: 120
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+Metrics/AbcSize:
+  Max: 25
+Metrics/MethodLength:
+  Max: 30
+
+Lint/MissingSuper:
+  Enabled: false

@@ -16,8 +16,8 @@ class AlertComponent < ApplicationComponent
     "success" => "text-green-500  bg-green-100  hover:bg-green-200  focus:ring-green-400",
   }
 
-  renders_one :button_link, -> (href: "", **options) do
-    ButtonLinkComponent.new(scheme: @scheme, href: href, **options)
+  renders_one :button_link, ->(href: "", **options) do
+    ButtonLinkComponent.new(scheme: @scheme, href:, **options)
   end
 
   def initialize(scheme: DEFAULT_SCHEME, subject: "", dismissible: true, **options)

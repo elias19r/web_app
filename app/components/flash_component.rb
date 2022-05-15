@@ -11,9 +11,17 @@ class FlashComponent < ApplicationComponent
 
   private
 
+  def rails_flash_keys_map(key)
+    case key
+    when :alert  then :danger
+    when :notice then :success
+    else key
+    end
+  end
+
   def build_alert_kwargs(flash_item)
     key, value = flash_item
-    key = key.to_sym
+    key = rails_flash_keys_map(key.to_sym)
 
     case value
     when Hash

@@ -1,6 +1,22 @@
 class HomeController < ApplicationController
   def index
-    # Testing
+    # Rails expected Flash keys
+
+    flash[:notice] = {
+      subject: 'Subject here',
+      content: 'Some Rails notice message',
+      dismissible: true,
+      button_link: { content: "I'm button", href: '#' }
+    }
+    flash[:alert] = {
+      subject: 'Subject here',
+      content: 'Some Rails alert message',
+      dismissible: true,
+      button_link: { content: "I'm button", href: '#' }
+    }
+
+    # AlertComponent scheme
+
     flash[:info] = {
       subject: 'Subject here',
       content: 'Some info message',

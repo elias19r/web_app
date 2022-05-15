@@ -13,6 +13,7 @@ class FlashComponent < ApplicationComponent
 
   def build_alert_kwargs(flash_item)
     key, value = flash_item
+    key = key.to_sym
 
     case value
     when Hash

@@ -1,52 +1,50 @@
-<div>
-  <h1 class="font-bold text-4xl">Home</h1>
+<%= render(HeadingComponent.new(tag: :h1)) { 'Home' } %>
 
-  <%=
-    render(ButtonLinkComponent.new(href: "#")) do
-      "I'm a primary button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :primary)) do
-      "I'm also a primary button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :secondary)) do
-      "I'm a secondary button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :info)) do
-      "I'm a info button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :danger)) do
-      "I'm a danger button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :warning)) do
-      "I'm a warning button link"
-    end
-  %>
-  <%=
-    render(ButtonLinkComponent.new(href: "#", scheme: :success)) do
-      "I'm a success button link"
-    end
-  %>
+<%=
+  render(ButtonLinkComponent.new(href: "#")) do
+    "I'm a primary button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :primary)) do
+    "I'm also a primary button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :secondary)) do
+    "I'm a secondary button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :info)) do
+    "I'm a info button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :danger)) do
+    "I'm a danger button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :warning)) do
+    "I'm a warning button link"
+  end
+%>
+<%=
+  render(ButtonLinkComponent.new(href: "#", scheme: :success)) do
+    "I'm a success button link"
+  end
+%>
 
-  <%= form_with do |form| %>
-    <div class="grid grid-cols-1 gap-2">
-      <%= render(FormLabelComponent.new(form, :someting)) { "I'm a label" } %>
-      <%= render(FormTextFieldComponent.new(form, :someting)) %>
+<%= form_with do |form| %>
+  <div class="grid grid-cols-1 gap-2">
+    <%= form.label(:someting, "I'm a label") %>
+    <%= form.text_field(:someting) %>
 
-      <%= render(FormLabelComponent.new(form, :email)) { "Email" } %>
-      <%= render(FormEmailFieldComponent.new(form, :email, placeholder: 'test@example.com')) %>
+    <%= form.label(:email, "Email") %>
+    <%= form.email_field(:email, placeholder: 'test@example.com') %>
 
-      <%= render(FormLabelComponent.new(form, :date)) { "Date" } %>
-      <%= render(FormDateFieldComponent.new(form, :date)) %>
-    </div>
-  <% end %>
-</div>
+    <%= form.label(:date, "Date") %>
+    <%= form.date_field(:date) %>
+  </div>
+<% end %>

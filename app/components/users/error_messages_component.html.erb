@@ -1,0 +1,7 @@
+<%= render(AlertComponent.new(scheme: :danger, subject: alert_subject)) do %>
+  <ul class="list-inside list-disc">
+    <% @resource.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>

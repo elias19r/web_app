@@ -20,7 +20,7 @@
       <%= yield :header %>
     </header>
 
-    <%= render(FlashComponent.new(flash)) %>
+    <%= render(FlashComponent.new(flash: flash)) %>
 
     <main class="container mx-auto mt-5 px-5">
       <%= yield %>

@@ -35,5 +35,7 @@ module WebApp
     config.generators.system_tests = nil
 
     config.action_controller.include_all_helpers = false
+
+    config.view_component.component_parent_class = 'ApplicationComponent'
   end
 end

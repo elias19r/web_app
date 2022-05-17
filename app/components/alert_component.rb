@@ -28,7 +28,7 @@ class AlertComponent < ApplicationComponent
     @dismissible = dismissible
 
     @options = {
-      data: { controller: "alert" },
+      data: { controller: 'alert-component' },
       role: "alert",
       class: token_list(
         "border-l-4 p-4 flex flex-row w-full max-w-screen-lg",
@@ -37,7 +37,7 @@ class AlertComponent < ApplicationComponent
     }.merge(options)
 
     @button_dismiss_options = {
-      data: { action: "click->alert#close" },
+      data: { action: "click->alert-component#close" },
       type: "button",
       aria: { label: I18n.t("components.alert.close") },
       class: token_list(

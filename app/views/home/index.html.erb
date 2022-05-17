@@ -1,40 +1,11 @@
 <%= render(HeadingComponent.new(tag: :h1)) { 'Home' } %>
 
-<%=
-  render(ButtonLinkComponent.new(href: "#")) do
-    "I'm a primary button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :primary)) do
-    "I'm also a primary button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :secondary)) do
-    "I'm a secondary button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :info)) do
-    "I'm a info button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :danger)) do
-    "I'm a danger button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :warning)) do
-    "I'm a warning button link"
-  end
-%>
-<%=
-  render(ButtonLinkComponent.new(href: "#", scheme: :success)) do
-    "I'm a success button link"
-  end
-%>
+<%= link_to("I'm a primary button link", "#", class: 'btn btn-primary') %>
+<%= link_to("I'm a secondary button link", "#", class: 'btn btn-secondary') %>
+<%= link_to("I'm a info button link", "#", class: 'btn btn-info') %>
+<%= link_to("I'm a danger button link", "#", class: 'btn btn-danger') %>
+<%= link_to("I'm a warning button link", "#", class: 'btn btn-warning') %>
+<%= link_to("I'm a success button link", "#", class: 'btn btn-success') %>
 
 <%= form_with do |form| %>
   <div class="grid grid-cols-1 gap-2">

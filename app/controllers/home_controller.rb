@@ -6,13 +6,13 @@ class HomeController < ApplicationController
       subject: 'Subject here',
       content: 'Some Rails notice message',
       dismissible: true,
-      button_link: { content: "I'm button", href: '#' }
+      link_to: ["I'm button", '#']
     }
     flash[:alert] = {
       subject: 'Subject here',
       content: 'Some Rails alert message',
       dismissible: true,
-      button_link: { content: "I'm button", href: '#' }
+      link_to: ["I'm button", '#']
     }
 
     # AlertComponent scheme
@@ -21,7 +21,7 @@ class HomeController < ApplicationController
       subject: 'Subject here',
       content: 'Some info message',
       dismissible: true,
-      button_link: { content: "I'm button", href: '#' }
+      link_to: ["I'm button", '#']
     }
     flash[:danger] = {
       subject: 'Subject here',
@@ -32,7 +32,7 @@ class HomeController < ApplicationController
       subject: 'Subject here',
       content: 'Some warning message',
       dismissible: true,
-      button_link: { content: "I'm button", href: '#' }
+      link_to: ["I'm button", '#']
     }
 
     flash[:success] = 'Some success message'

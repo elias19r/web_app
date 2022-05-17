@@ -49,30 +49,14 @@ class FlashComponent < ApplicationComponent
     end
   end
 
-  def build_alert_button_link_kwargs(flash_item)
+  def build_alert_link_to_args(flash_item)
     _key, value = flash_item
 
     case value
     when Hash
-      button_link = value[:button_link] || {}
-
-      {
-        href: button_link[:href],
-        **(button_link[:options] || {})
-      }.compact
+      value[:link_to] || []
     else
-      {}
-    end
-  end
-
-  def get_alert_button_link_content(flash_item)
-    _key, value = flash_item
-
-    case value
-    when Hash
-      button_link = value[:button_link] || {}
-
-      button_link[:content]
+      []
     end
   end
 end

@@ -68,3 +68,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+# Selenium is a JavaScript-capable driver.
+Capybara.default_driver = :selenium_chrome_headless # or :selenium_chrome

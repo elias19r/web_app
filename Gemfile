@@ -64,6 +64,7 @@ group :development, :test do
   gem 'rubocop-rails', require: false
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
